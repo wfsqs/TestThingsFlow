@@ -23,6 +23,7 @@
 		3B8EE2B92931BB7E00692FB0 /* NetworkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2B82931BB7E00692FB0 /* NetworkUtility.swift */; };
 		3B8EE2BB2931BBBF00692FB0 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */; };
 		3B8EE2BD2931BC5300692FB0 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2BC2931BC5300692FB0 /* Issue.swift */; };
+		3B8EE2BF2931C2D000692FB0 /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2BE2931C2D000692FB0 /* IssueCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		3B8EE2B82931BB7E00692FB0 /* NetworkUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtility.swift; sourceTree = "<group>"; };
 		3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
 		3B8EE2BC2931BC5300692FB0 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		3B8EE2BE2931C2D000692FB0 /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				3B8EE28C2931B04800692FB0 /* AppDelegate.swift */,
 				3B8EE2902931B04800692FB0 /* IssueListViewController.swift */,
 				3B8EE2A02931B3B800692FB0 /* IssueListView.swift */,
+				3B8EE2BE2931C2D000692FB0 /* IssueCell.swift */,
 				3B8EE2B62931BB4B00692FB0 /* GitHubService.swift */,
 				3B8EE2B82931BB7E00692FB0 /* NetworkUtility.swift */,
 				3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */,
@@ -183,6 +186,7 @@
 				3B8EE28D2931B04800692FB0 /* AppDelegate.swift in Sources */,
 				3B8EE2B72931BB4B00692FB0 /* GitHubService.swift in Sources */,
 				3B8EE2BD2931BC5300692FB0 /* Issue.swift in Sources */,
+				3B8EE2BF2931C2D000692FB0 /* IssueCell.swift in Sources */,
 				3B8EE2A12931B3B800692FB0 /* IssueListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
