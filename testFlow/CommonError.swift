@@ -6,6 +6,7 @@ enum CommonError: Error, Equatable {
     case unKnown
     case validationFailed
     case movedPermanent
+    case custom(message: String)
     
     init(statusCode: Int?) {
         switch statusCode {
@@ -32,6 +33,9 @@ extension CommonError: LocalizedError {
             
         case .unKnown:
             return "알 수 없는 에러입니다."
+            
+        case .custom(let message):
+            return message
         }
     }
 }

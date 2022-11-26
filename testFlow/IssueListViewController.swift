@@ -28,7 +28,19 @@ class IssueListViewController: UIViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = barButtonItem
-        self.reactor = IssueListReactor(githubService: GitHubService())
+        self.reactor = IssueListReactor(
+            initialState: IssueListReactor.State(
+                issues: [],
+                currentOwner: UserDefaults.standard.string(forKey: "keyOwner") ?? "apple",
+                currentRepo: UserDefaults.standard.string(forKey: "keyRepo") ?? "swift",
+                showURL: nil,
+                error: nil,
+                showIssue: nil
+            ),
+            githubService: GitHubService(),
+            userDefaults: UserDefaults.standard,
+            globalState: GlobalState.shared
+        )
         self.reactor?.action.onNext(.viewDidLoad)
     }
         

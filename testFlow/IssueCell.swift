@@ -60,7 +60,7 @@ final class IssueCell: UITableViewCell {
     
     private func bindConstraints() {
         self.stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalToSuperview().inset(5)
             $0.height.equalTo(40)
         }
     }

@@ -21,25 +21,33 @@ final class IssueListReactor: Reactor {
     }
     
     struct State {
-        var issues: [Issue] = []
-        var currentOwner: String = "apple"
-        var currentRepo: String = "swift"
+        var issues: [Issue]
+        var currentOwner: String
+        var currentRepo: String
         @Pulse var showURL: Void?
         @Pulse var error: Error?
         @Pulse var showIssue: Issue?
     }
     
-    var initialState: State = IssueListReactor.State()
+    var initialState: State
     private let githubService: GitHubServiceType
     private var currentPage = 1
     private let pageCount = 20
     private var isLast = false
     private var isLoadingService = false
+    private let userDefaults: UserDefaults
+    private let globalState: GlobalState
     
     init(
-        githubService: GitHubServiceType
+        initialState: State,
+        githubService: GitHubServiceType,
+        userDefaults: UserDefaults,
+        globalState: GlobalState
     ) {
+        self.initialState = initialState
         self.githubService = githubService
+        self.userDefaults = userDefaults
+        self.globalState = globalState
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -49,7 +57,9 @@ final class IssueListReactor: Reactor {
             self.isLast = false
             
             if owner.isEmpty || repo.isEmpty {
-                return .empty()
+                return Observable.just(
+                    Mutation.showErrorAlert(CommonError.custom(message: "입력되지 않은 정보가 있습니다."))
+                )
             } else {
                 return self.searchRepository(owner: owner, repo: repo)
             }
@@ -61,7 +71,10 @@ final class IssueListReactor: Reactor {
             return self.searchRepository(isWillDisplayCell: true)
             
         case .viewDidLoad:
-            return self.searchRepository(owner: "apple", repo: "swift")
+            return self.searchRepository(
+                owner: self.currentState.currentOwner,
+                repo: self.currentState.currentRepo
+            )
             
         case .selectRow(let indexPath):
             if indexPath.row == 4 {
@@ -101,6 +114,13 @@ final class IssueListReactor: Reactor {
         }
         
         return newState
+    }
+    
+    func transform(action: Observable<Action>) -> Observable<Action> {
+        return .merge([
+            action,
+            self.globalState.refreshIssue.map { .search(owner: $0.owner, repo: $0.repo) }
+        ])
     }
         
     private func canLoadMore(row: Int) -> Bool {
@@ -142,6 +162,8 @@ final class IssueListReactor: Reactor {
                 if addBannerIssues.count > 5 {
                     addBannerIssues.insert(Issue(), at: 4)
                 }
+                self.userDefaults.set(owner, forKey: "keyOwner")
+                self.userDefaults.set(repo, forKey: "keyRepo")
                 
                 return Observable.merge([
                     Observable.just(Mutation.setIssues(addBannerIssues)),
