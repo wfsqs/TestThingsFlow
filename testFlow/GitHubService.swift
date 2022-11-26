@@ -26,9 +26,15 @@ final class GitHubService: GitHubServiceType {
                 observer.onError(CommonError.unKnown)
                 return Disposables.create()
             }
+            
+            var components = URLComponents(string: url.absoluteString)
+            components?.queryItems = [
+                URLQueryItem(name: "per_page", value: "\(perPage)"),
+                URLQueryItem(name: "page", value: "\(currentPage)")
+            ]
 
             AF.request(
-                url.absoluteString,
+                components?.string ?? "",
                 method: .get,
                 encoding: URLEncoding.httpBody,
                 headers: NetworkUtility.getHeader()

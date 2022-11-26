@@ -39,9 +39,9 @@ final class IssueCell: UITableViewCell {
         self.disposeBag = DisposeBag()
     }
     
-    func configure(issue: Issue, isShowBanner: Bool = false) {
-        if isShowBanner {
-            let url = URL(string: "https://s3.ap-northeast-2.amazonaws.com/hellobot-kr-test/image/main_logo.png")
+    func configure(issue: Issue) {
+        if !issue.bannerURL.isEmpty {
+            let url = URL(string: issue.bannerURL)
             self.bannerImageView.isHidden = false
             self.bannerImageView.sd_setImage(with: url)
         } else {
@@ -51,6 +51,7 @@ final class IssueCell: UITableViewCell {
     }
         
     private func setup() {
+        self.selectionStyle = .none
         self.contentView.addSubview(self.stackView)
         
         self.stackView.addArrangedSubview(self.titleLabel)
@@ -60,6 +61,7 @@ final class IssueCell: UITableViewCell {
     private func bindConstraints() {
         self.stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+            $0.height.equalTo(40)
         }
     }
 }

@@ -4,6 +4,7 @@ struct Issue: Decodable {
     let profileURL: String
     let userName: String
     let contents: String
+    var bannerURL: String = ""
     
     enum CodingKeys: String, CodingKey {
         case number
@@ -26,5 +27,14 @@ struct Issue: Decodable {
         self.profileURL = try nestedContainer.decodeIfPresent(String.self, forKey: .profileURL) ?? ""
         self.userName = try nestedContainer.decodeIfPresent(String.self, forKey: .userName) ?? ""
         self.contents = try container.decodeIfPresent(String.self, forKey: .contents) ?? ""
+    }
+    
+    init() {
+        self.number = 0
+        self.title = ""
+        self.profileURL = ""
+        self.userName = ""
+        self.contents = ""
+        self.bannerURL = "https://s3.ap-northeast-2.amazonaws.com/hellobot-kr-test/image/main_logo.png"
     }
 }

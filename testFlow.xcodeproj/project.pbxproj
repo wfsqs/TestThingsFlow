@@ -24,6 +24,10 @@
 		3B8EE2BB2931BBBF00692FB0 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */; };
 		3B8EE2BD2931BC5300692FB0 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2BC2931BC5300692FB0 /* Issue.swift */; };
 		3B8EE2BF2931C2D000692FB0 /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2BE2931C2D000692FB0 /* IssueCell.swift */; };
+		3B8EE2C12931C51800692FB0 /* IssueListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2C02931C51800692FB0 /* IssueListReactor.swift */; };
+		3B8EE2C32931D49800692FB0 /* IssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2C22931D49800692FB0 /* IssueDetailViewController.swift */; };
+		3B8EE2C52931D4C100692FB0 /* IssueDetailReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2C42931D4C100692FB0 /* IssueDetailReactor.swift */; };
+		3B8EE2C72931D4C400692FB0 /* IssueDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2C62931D4C400692FB0 /* IssueDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
 		3B8EE2BC2931BC5300692FB0 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		3B8EE2BE2931C2D000692FB0 /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
+		3B8EE2C02931C51800692FB0 /* IssueListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListReactor.swift; sourceTree = "<group>"; };
+		3B8EE2C22931D49800692FB0 /* IssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewController.swift; sourceTree = "<group>"; };
+		3B8EE2C42931D4C100692FB0 /* IssueDetailReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailReactor.swift; sourceTree = "<group>"; };
+		3B8EE2C62931D4C400692FB0 /* IssueDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,10 @@
 				3B8EE28C2931B04800692FB0 /* AppDelegate.swift */,
 				3B8EE2902931B04800692FB0 /* IssueListViewController.swift */,
 				3B8EE2A02931B3B800692FB0 /* IssueListView.swift */,
+				3B8EE2C02931C51800692FB0 /* IssueListReactor.swift */,
+				3B8EE2C22931D49800692FB0 /* IssueDetailViewController.swift */,
+				3B8EE2C62931D4C400692FB0 /* IssueDetailView.swift */,
+				3B8EE2C42931D4C100692FB0 /* IssueDetailReactor.swift */,
 				3B8EE2BE2931C2D000692FB0 /* IssueCell.swift */,
 				3B8EE2B62931BB4B00692FB0 /* GitHubService.swift */,
 				3B8EE2B82931BB7E00692FB0 /* NetworkUtility.swift */,
@@ -182,12 +194,16 @@
 			files = (
 				3B8EE2912931B04800692FB0 /* IssueListViewController.swift in Sources */,
 				3B8EE2BB2931BBBF00692FB0 /* CommonError.swift in Sources */,
+				3B8EE2C72931D4C400692FB0 /* IssueDetailView.swift in Sources */,
 				3B8EE2B92931BB7E00692FB0 /* NetworkUtility.swift in Sources */,
 				3B8EE28D2931B04800692FB0 /* AppDelegate.swift in Sources */,
+				3B8EE2C32931D49800692FB0 /* IssueDetailViewController.swift in Sources */,
+				3B8EE2C52931D4C100692FB0 /* IssueDetailReactor.swift in Sources */,
 				3B8EE2B72931BB4B00692FB0 /* GitHubService.swift in Sources */,
 				3B8EE2BD2931BC5300692FB0 /* Issue.swift in Sources */,
 				3B8EE2BF2931C2D000692FB0 /* IssueCell.swift in Sources */,
 				3B8EE2A12931B3B800692FB0 /* IssueListView.swift in Sources */,
+				3B8EE2C12931C51800692FB0 /* IssueListReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
