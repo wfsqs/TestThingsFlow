@@ -45,6 +45,23 @@ class IssueListViewController: UIViewController, View {
     }
         
     func bind(reactor: IssueListReactor) {
+        self.barButtonItem.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                self?.showSearchAlert()
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.issueListView.tableView.rx.willDisplayCell
+            .map { Reactor.Action.willDisplayCell(indexPath: $0.indexPath) }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+        
+        self.issueListView.tableView.rx.itemSelected
+            .map { Reactor.Action.selectRow($0) }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+
         reactor.state.map { ($0.currentOwner, $0.currentRepo) }
             .asDriver(onErrorJustReturn: ("",""))
             .map { "\($0.0)/\($0.1)"}
@@ -58,23 +75,6 @@ class IssueListViewController: UIViewController, View {
             ) { index, issue, cell in
                 cell.configure(issue: issue)
             }
-            .disposed(by: self.disposeBag)
-        
-        self.issueListView.tableView.rx.willDisplayCell
-            .map { Reactor.Action.willDisplayCell(indexPath: $0.indexPath) }
-            .bind(to: reactor.action)
-            .disposed(by: self.disposeBag)
-        
-        self.barButtonItem.rx.tap
-            .asDriver()
-            .drive(onNext: { [weak self] in
-                self?.showSearchAlert()
-            })
-            .disposed(by: self.disposeBag)
-        
-        self.issueListView.tableView.rx.itemSelected
-            .map { Reactor.Action.selectRow($0) }
-            .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         
         reactor.pulse(\.$error)
@@ -98,9 +98,9 @@ class IssueListViewController: UIViewController, View {
         reactor.pulse(\.$showIssue)
             .asDriver(onErrorJustReturn: nil)
             .compactMap { $0 }
-            .drive(onNext: {
+            .drive(onNext: { [weak self] in
                 let viewController = IssueDetailViewController.instances(issue: $0)
-                self.navigationController?.pushViewController(viewController, animated: true)
+                self?.navigationController?.pushViewController(viewController, animated: true)
             })
             .disposed(by: self.disposeBag)
     }
