@@ -89,16 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				3B8EE28C2931B04800692FB0 /* AppDelegate.swift */,
-				3B8EE2902931B04800692FB0 /* IssueListViewController.swift */,
-				3B8EE2A02931B3B800692FB0 /* IssueListView.swift */,
-				3B8EE2C02931C51800692FB0 /* IssueListReactor.swift */,
-				3B8EE2C22931D49800692FB0 /* IssueDetailViewController.swift */,
-				3B8EE2C62931D4C400692FB0 /* IssueDetailView.swift */,
-				3B8EE2C42931D4C100692FB0 /* IssueDetailReactor.swift */,
-				3B8EE2BE2931C2D000692FB0 /* IssueCell.swift */,
-				3B8EE2B62931BB4B00692FB0 /* GitHubService.swift */,
-				3B8EE2B82931BB7E00692FB0 /* NetworkUtility.swift */,
-				3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */,
+				3B8EE2CC2931F38800692FB0 /* IssueList */,
+				3B8EE2CB2931F37A00692FB0 /* IssueDetail */,
+				3B8EE2CD2931F3A200692FB0 /* Network */,
 				3B8EE2BC2931BC5300692FB0 /* Issue.swift */,
 				3B8EE2C92931EAD800692FB0 /* GlobalState.swift */,
 				3B8EE2952931B04900692FB0 /* Assets.xcassets */,
@@ -106,6 +99,37 @@
 				3B8EE29A2931B04900692FB0 /* Info.plist */,
 			);
 			path = testFlow;
+			sourceTree = "<group>";
+		};
+		3B8EE2CB2931F37A00692FB0 /* IssueDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EE2C42931D4C100692FB0 /* IssueDetailReactor.swift */,
+				3B8EE2C62931D4C400692FB0 /* IssueDetailView.swift */,
+				3B8EE2C22931D49800692FB0 /* IssueDetailViewController.swift */,
+			);
+			path = IssueDetail;
+			sourceTree = "<group>";
+		};
+		3B8EE2CC2931F38800692FB0 /* IssueList */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EE2902931B04800692FB0 /* IssueListViewController.swift */,
+				3B8EE2A02931B3B800692FB0 /* IssueListView.swift */,
+				3B8EE2C02931C51800692FB0 /* IssueListReactor.swift */,
+				3B8EE2BE2931C2D000692FB0 /* IssueCell.swift */,
+			);
+			path = IssueList;
+			sourceTree = "<group>";
+		};
+		3B8EE2CD2931F3A200692FB0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3B8EE2B62931BB4B00692FB0 /* GitHubService.swift */,
+				3B8EE2B82931BB7E00692FB0 /* NetworkUtility.swift */,
+				3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
