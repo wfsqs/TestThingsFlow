@@ -18,6 +18,11 @@
 		3B8EE2AC2931B40700692FB0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3B8EE2AB2931B40700692FB0 /* SnapKit */; };
 		3B8EE2AF2931B41F00692FB0 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3B8EE2AE2931B41F00692FB0 /* ReactorKit */; };
 		3B8EE2B22931B43800692FB0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3B8EE2B12931B43800692FB0 /* Alamofire */; };
+		3B8EE2B52931BA7700692FB0 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3B8EE2B42931BA7700692FB0 /* SDWebImage */; };
+		3B8EE2B72931BB4B00692FB0 /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2B62931BB4B00692FB0 /* GitHubService.swift */; };
+		3B8EE2B92931BB7E00692FB0 /* NetworkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2B82931BB7E00692FB0 /* NetworkUtility.swift */; };
+		3B8EE2BB2931BBBF00692FB0 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */; };
+		3B8EE2BD2931BC5300692FB0 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8EE2BC2931BC5300692FB0 /* Issue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,10 @@
 		3B8EE2982931B04900692FB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B8EE29A2931B04900692FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B8EE2A02931B3B800692FB0 /* IssueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListView.swift; sourceTree = "<group>"; };
+		3B8EE2B62931BB4B00692FB0 /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		3B8EE2B82931BB7E00692FB0 /* NetworkUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtility.swift; sourceTree = "<group>"; };
+		3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
+		3B8EE2BC2931BC5300692FB0 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +47,7 @@
 				3B8EE2A92931B3F900692FB0 /* RxSwift in Frameworks */,
 				3B8EE2AC2931B40700692FB0 /* SnapKit in Frameworks */,
 				3B8EE2A72931B3F900692FB0 /* RxCocoa in Frameworks */,
+				3B8EE2B52931BA7700692FB0 /* SDWebImage in Frameworks */,
 				3B8EE2B22931B43800692FB0 /* Alamofire in Frameworks */,
 				3B8EE2AF2931B41F00692FB0 /* ReactorKit in Frameworks */,
 				3B8EE2A42931B3E900692FB0 /* Then in Frameworks */,
@@ -69,6 +79,10 @@
 				3B8EE28C2931B04800692FB0 /* AppDelegate.swift */,
 				3B8EE2902931B04800692FB0 /* IssueListViewController.swift */,
 				3B8EE2A02931B3B800692FB0 /* IssueListView.swift */,
+				3B8EE2B62931BB4B00692FB0 /* GitHubService.swift */,
+				3B8EE2B82931BB7E00692FB0 /* NetworkUtility.swift */,
+				3B8EE2BA2931BBBF00692FB0 /* CommonError.swift */,
+				3B8EE2BC2931BC5300692FB0 /* Issue.swift */,
 				3B8EE2952931B04900692FB0 /* Assets.xcassets */,
 				3B8EE2972931B04900692FB0 /* LaunchScreen.storyboard */,
 				3B8EE29A2931B04900692FB0 /* Info.plist */,
@@ -99,6 +113,7 @@
 				3B8EE2AB2931B40700692FB0 /* SnapKit */,
 				3B8EE2AE2931B41F00692FB0 /* ReactorKit */,
 				3B8EE2B12931B43800692FB0 /* Alamofire */,
+				3B8EE2B42931BA7700692FB0 /* SDWebImage */,
 			);
 			productName = testFlow;
 			productReference = 3B8EE2892931B04800692FB0 /* testFlow.app */;
@@ -134,6 +149,7 @@
 				3B8EE2AA2931B40700692FB0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				3B8EE2AD2931B41F00692FB0 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				3B8EE2B02931B43800692FB0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3B8EE2B32931BA7700692FB0 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 3B8EE28A2931B04800692FB0 /* Products */;
 			projectDirPath = "";
@@ -162,7 +178,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B8EE2912931B04800692FB0 /* IssueListViewController.swift in Sources */,
+				3B8EE2BB2931BBBF00692FB0 /* CommonError.swift in Sources */,
+				3B8EE2B92931BB7E00692FB0 /* NetworkUtility.swift in Sources */,
 				3B8EE28D2931B04800692FB0 /* AppDelegate.swift in Sources */,
+				3B8EE2B72931BB4B00692FB0 /* GitHubService.swift in Sources */,
+				3B8EE2BD2931BC5300692FB0 /* Issue.swift in Sources */,
 				3B8EE2A12931B3B800692FB0 /* IssueListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +433,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		3B8EE2B32931BA7700692FB0 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -445,6 +473,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3B8EE2B02931B43800692FB0 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		3B8EE2B42931BA7700692FB0 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B8EE2B32931BA7700692FB0 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
